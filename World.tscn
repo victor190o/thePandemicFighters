@@ -1,53 +1,64 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://pedregulho.tres" type="TileSet" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
 [ext_resource path="res://player/playerSprite.png" type="Texture" id=3]
+[ext_resource path="res://WhatsApp Image 2021-04-22 at 17.48.00 (1).jpeg" type="Texture" id=4]
 [ext_resource path="res://audio/Medieval Song.ogg" type="AudioStream" id=5]
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=1]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 120, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 180, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 240, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 300, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=7]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 360, 0, 60, 100 )
 
-[sub_resource type="SpriteFrames" id=8]
+[sub_resource type="SpriteFrames" id=7]
 animations = [ {
-"frames": [ SubResource( 2 ) ],
+"frames": [ SubResource( 1 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
+"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=9]
+[sub_resource type="RectangleShape2D" id=8]
 extents = Vector2( 14.2953, 25.4236 )
 
 [node name="World" type="Node"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -371.637 ]
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_left = 179.0
+margin_right = 1420.0
+margin_bottom = 525.0
+texture = ExtResource( 4 )
+expand = true
+__meta__ = {
+"_edit_use_anchors_": false
 }
 
 [node name="Player" type="KinematicBody2D" parent="."]
@@ -60,13 +71,13 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( -2.86102e-06, 8.00001 )
 scale = Vector2( 1.06667, 0.8 )
-frames = SubResource( 8 )
+frames = SubResource( 7 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, 9.05748 )
 scale = Vector2( 1.14068, 1.48271 )
-shape = SubResource( 9 )
+shape = SubResource( 8 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
