@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Medieval Song.mp3-30a47d92bbcf11559ff6c9b4a31afbd7.mp3str"
+
+[deps]
+
+source_file="res://audio/Medieval Song.mp3"
+dest_files=[ "res://.import/Medieval Song.mp3-30a47d92bbcf11559ff6c9b4a31afbd7.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
