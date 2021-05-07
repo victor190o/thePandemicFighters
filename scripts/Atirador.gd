@@ -40,6 +40,7 @@ func _process(delta):
 		
 	if !tiro:
 		tiropressionado = false
-		
-		
-		
+
+func _on_municao_body_entered(body):
+	print(body)
+	pass # Replace with function body.

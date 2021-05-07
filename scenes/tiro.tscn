@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://WhatsApp Image 2021-04-22 at 17.48.00 (1).jpeg" type="Texture" id=1]
 [ext_resource path="res://scripts/Tiro.gd" type="Script" id=2]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 308.706, 167.111 )
+
+[sub_resource type="RectangleShape2D" id=2]
+extents = Vector2( 24, 8 )
 
 [node name="Tiro" type="Node2D"]
 script = ExtResource( 2 )
@@ -26,3 +29,11 @@ collision_mask = 262144
 
 [node name="Shape" type="CollisionShape2D" parent="Sprite/Detector"]
 shape = SubResource( 1 )
+
+[node name="contato" type="Area2D" parent="."]
+collision_layer = 6
+collision_mask = 6
+
+[node name="Shape" type="CollisionShape2D" parent="contato"]
+shape = SubResource( 2 )
+[connection signal="body_entered" from="contato" to="." method="_on_contato_body_entered"]
