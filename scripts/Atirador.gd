@@ -42,5 +42,5 @@ func _process(delta):
 		tiropressionado = false
 
 func _on_municao_body_entered(body):
-	print(body)
+	body.dano()
 	pass # Replace with function body.

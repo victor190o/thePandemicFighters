@@ -3,52 +3,52 @@
 [ext_resource path="res://pedregulho.tres" type="TileSet" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
 [ext_resource path="res://player/playerSprite.png" type="Texture" id=3]
+[ext_resource path="res://scenes/Monstro.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/Medieval Song.ogg" type="AudioStream" id=5]
 [ext_resource path="res://scripts/Atirador.gd" type="Script" id=6]
-[ext_resource path="res://scenes/Monstro.tscn" type="PackedScene" id=7]
 
-[sub_resource type="StreamTexture" id=9]
+[sub_resource type="StreamTexture" id=1]
 flags = 4
 load_path = "res://.import/bg2.jpg-6eb4a148f0587090ef031af80bb4d3f6.stex"
 
-[sub_resource type="AtlasTexture" id=1]
+[sub_resource type="AtlasTexture" id=2]
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=2]
+[sub_resource type="AtlasTexture" id=3]
 atlas = ExtResource( 3 )
 region = Rect2( 120, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=4]
 atlas = ExtResource( 3 )
 region = Rect2( 180, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=5]
 atlas = ExtResource( 3 )
 region = Rect2( 240, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=6]
 atlas = ExtResource( 3 )
 region = Rect2( 300, 0, 60, 100 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=7]
 atlas = ExtResource( 3 )
 region = Rect2( 360, 0, 60, 100 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=8]
 animations = [ {
-"frames": [ SubResource( 1 ) ],
+"frames": [ SubResource( 2 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ) ],
 "loop": true,
 "name": "run",
 "speed": 8.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=8]
+[sub_resource type="RectangleShape2D" id=9]
 extents = Vector2( 14.2953, 25.4236 )
 
 [node name="World" type="Node"]
@@ -64,13 +64,11 @@ motion_mirroring = Vector2( 1121, 0 )
 [node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
 position = Vector2( -100.927, 0 )
 scale = Vector2( 0.876161, 0.841048 )
-texture = SubResource( 9 )
+texture = SubResource( 1 )
 centered = false
 
 [node name="Player" type="KinematicBody2D" parent="."]
 position = Vector2( 411.061, 305.436 )
-collision_layer = 2048
-collision_mask = 2048
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -79,13 +77,13 @@ __meta__ = {
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( -2.86102e-06, 8.00001 )
 scale = Vector2( 1.06667, 0.8 )
-frames = SubResource( 7 )
+frames = SubResource( 8 )
 animation = "idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( 0, 9.05748 )
 scale = Vector2( 1.14068, 1.48271 )
-shape = SubResource( 8 )
+shape = SubResource( 9 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 current = true
@@ -103,32 +101,8 @@ autoplay = true
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
 cell_size = Vector2( 32, 32 )
-collision_layer = 2048
-collision_mask = 2048
 format = 1
+tile_data = PoolIntArray( 1114109, 1, 0, 1114110, 2, 0, 1114111, 2, 0, 1048576, 2, 0, 1048577, 2, 0, 1048578, 2, 0, 1048579, 2, 0, 1048580, 2, 0, 1048581, 2, 0, 1048582, 2, 0, 1048583, 2, 0, 1048584, 2, 0, 1048585, 2, 0, 1048586, 2, 0, 1048587, 2, 0, 1048588, 2, 0, 1048589, 2, 0, 1048590, 2, 0, 1048591, 2, 0, 1048592, 2, 0, 1048593, 2, 0, 1048594, 2, 0, 1048595, 2, 0, 1048596, 2, 0, 1048597, 2, 0, 1048598, 2, 0, 1048599, 2, 0, 1048600, 2, 0, 1048601, 2, 0, 1048602, 2, 0, 1048603, 2, 0, 1048604, 2, 0, 1048605, 2, 0, 1048606, 2, 0, 1048607, 2, 0, 1048608, 2, 0, 1048609, 2, 0, 1048610, 2, 0, 1048611, 2, 0, 1048612, 2, 0, 1048613, 2, 0, 1048614, 2, 0, 1048615, 2, 0, 1048616, 2, 0, 1048617, 2, 0, 1048618, 2, 0, 1048619, 2, 0, 1048620, 2, 0, 1048621, 2, 0, 1048622, 2, 0, 1048623, 2, 0, 1048624, 2, 0, 1048625, 2, 0, 1048626, 2, 0, 1048627, 2, 0, 1048628, 2, 0, 1048629, 2, 0, 1048630, 2, 0, 1048631, 2, 0, 1048632, 2, 0, 1048633, 2, 0, 1048634, 2, 0, 1048635, 2, 0, 1048636, 2, 0, 1048637, 2, 0, 1048638, 2, 0, 1048639, 2, 0, 1048640, 2, 0, 1048641, 2, 0, 1048642, 2, 0, 1048643, 2, 0, 1048644, 2, 0, 1048645, 2, 0, 1048646, 2, 0, 1048647, 2, 0, 1048648, 2, 0, 1048649, 2, 0, 1048650, 2, 0, 1048651, 2, 0, 1048652, 2, 0, 1048653, 2, 0, 1048654, 2, 0, 1048655, 2, 0, 1048656, 2, 0, 1048657, 2, 0, 1048658, 2, 0, 1048659, 2, 0, 1048660, 2, 0, 1048661, 2, 0, 1048662, 2, 0, 1048663, 2, 0, 1048664, 2, 0, 1048665, 2, 0, 1048666, 2, 0, 1048667, 2, 0, 1048668, 2, 0, 1048669, 2, 0, 1048670, 2, 0, 1048671, 2, 0, 1048672, 2, 0, 1048673, 2, 0, 1048674, 3, 0 )
 
-tile_data = PoolIntArray( 131097, 1, 0, 131098, 2, 0, 131099, 2, 0, 131100, 2, 0, 131101, 2, 0, 131102, 2, 0, 131103, 2, 0, 131104, 2, 0, 131105, 2, 0, 131106, 2, 0, 131107, 2, 0, 131108, 2, 0, 131109, 2, 0, 131110, 2, 0, 131111, 2, 0, 131112, 2, 0, 131113, 2, 0, 131114, 2, 0, 131115, 2, 0, 131116, 3, 0, 262159, 1, 0, 262160, 2, 0, 262161, 2, 0, 262162, 2, 0, 262163, 2, 0, 262164, 2, 0, 262165, 2, 0, 262166, 3, 0, 393223, 1, 0, 393224, 2, 0, 393225, 2, 0, 393226, 2, 0, 393227, 2, 0, 393228, 3, 0, 524303, 2, 0, 524304, 2, 0, 524305, 2, 0, 524306, 3, 0, 655382, 1, 0, 655383, 2, 0, 655384, 2, 0, 655385, 2, 0, 655386, 2, 0, 655387, 2, 0, 655388, 3, 0, 786440, 1, 0, 786441, 2, 0, 786442, 2, 0, 786443, 2, 0, 786444, 2, 0, 786445, 2, 0, 786446, 2, 0, 786447, 2, 0, 786448, 2, 0, 786449, 2, 0, 786450, 2, 0, 786451, 3, 0 )
-
-[node name="Monstro" parent="." instance=ExtResource( 7 )]
-collision_layer = 2052
-collision_mask = 2052
-
-[node name="Monstro2" parent="." instance=ExtResource( 7 )]
-position = Vector2( -491.638, -133.573 )
-collision_layer = 2052
-collision_mask = 2052
-
-[node name="Monstro3" parent="." instance=ExtResource( 7 )]
-position = Vector2( -245.819, -196.431 )
-collision_layer = 2052
-collision_mask = 2052
-
-[node name="Monstro4" parent="." instance=ExtResource( 7 )]
-position = Vector2( -271.636, -67.3477 )
-collision_layer = 2052
-collision_mask = 2052
-
-[node name="Monstro5" parent="." instance=ExtResource( 7 )]
-position = Vector2( 53.8783, -260.411 )
-collision_layer = 2052
-collision_mask = 2052
+[node name="Monstro" parent="." instance=ExtResource( 4 )]
+position = Vector2( 850.826, 474.801 )
