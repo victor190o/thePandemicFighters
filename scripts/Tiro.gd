@@ -15,9 +15,10 @@ func _process(delta):
 		position = Vector2(position.x + velocidade * direcao * delta, position.y)
 		tempo += delta
 		if(tempo > 0.5):
+			contato = true
 			$Sprite.stop()
 			$Sprite.play("tirofim")
-			queue_free()
+			get_node("anim").play("explosao")
 
 func _on_contato_body_entered(body):
 	contato = true
