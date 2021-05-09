@@ -4,6 +4,7 @@ const UP = Vector2(0, -1)
 const GRAVITY = 30
 const SPEED = 260
 const JUMP_HEIGHT = -550
+var lowered = false
 var jump_count = 0
 
 var motion = Vector2()
@@ -21,6 +22,9 @@ func _physics_process(delta):
 		motion.x = -SPEED
 		$Sprite.flip_h = true
 		$Sprite.play("run")
+	elif Input.is_action_pressed("ui_down"):
+		motion.y += GRAVITY * 2
+		$Sprite.play("lowered")
 	else:
 		motion.x = 0
 		$Sprite.play("idle")
@@ -31,6 +35,7 @@ func _physics_process(delta):
 				jump_count = jump_count + 1
 	
 	if is_on_floor():
+		lowered = false
 		jump_count = 0
 	
 	motion = move_and_slide(motion, UP)

@@ -17,73 +17,73 @@
 [ext_resource path="res://assets/tirofim/hits-2-7.png" type="Texture" id=15]
 [ext_resource path="res://assets/tirofim/hits-2-2.png" type="Texture" id=16]
 
-[sub_resource type="RectangleShape2D" id=2]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 8 )
 
-[sub_resource type="AtlasTexture" id=12]
+[sub_resource type="AtlasTexture" id=2]
 flags = 4
 atlas = ExtResource( 13 )
 region = Rect2( 0, 0, 32, 32 )
 
-[sub_resource type="AtlasTexture" id=8]
+[sub_resource type="AtlasTexture" id=3]
 flags = 4
 atlas = ExtResource( 9 )
 region = Rect2( 0, 0, 63, 32 )
 
-[sub_resource type="AtlasTexture" id=9]
+[sub_resource type="AtlasTexture" id=4]
 flags = 4
 atlas = ExtResource( 8 )
 region = Rect2( 0, 0, 63, 32 )
 
-[sub_resource type="AtlasTexture" id=10]
+[sub_resource type="AtlasTexture" id=5]
 flags = 4
 atlas = ExtResource( 7 )
 region = Rect2( 0, 0, 63, 32 )
 
-[sub_resource type="AtlasTexture" id=11]
+[sub_resource type="AtlasTexture" id=6]
 flags = 4
 atlas = ExtResource( 6 )
 region = Rect2( 0, 0, 63, 32 )
 
-[sub_resource type="AtlasTexture" id=3]
+[sub_resource type="AtlasTexture" id=7]
 flags = 4
 atlas = ExtResource( 4 )
 region = Rect2( 0, 0, 95, 32 )
 
-[sub_resource type="AtlasTexture" id=4]
+[sub_resource type="AtlasTexture" id=8]
 flags = 4
 atlas = ExtResource( 1 )
 region = Rect2( 0, 0, 95, 32 )
 
-[sub_resource type="AtlasTexture" id=5]
+[sub_resource type="AtlasTexture" id=9]
 flags = 4
 atlas = ExtResource( 5 )
 region = Rect2( 0, 0, 95, 32 )
 
-[sub_resource type="AtlasTexture" id=6]
+[sub_resource type="AtlasTexture" id=10]
 flags = 4
 atlas = ExtResource( 3 )
 region = Rect2( 0, 0, 95, 32 )
 
-[sub_resource type="SpriteFrames" id=7]
+[sub_resource type="SpriteFrames" id=11]
 animations = [ {
-"frames": [ SubResource( 12 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ) ],
+"frames": [ SubResource( 2 ), ExtResource( 16 ), ExtResource( 11 ), ExtResource( 10 ), ExtResource( 12 ), ExtResource( 14 ), ExtResource( 15 ) ],
 "loop": true,
 "name": "tirofim",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 8 ), SubResource( 9 ), SubResource( 10 ), SubResource( 11 ) ],
+"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
 "loop": true,
 "name": "tiro2",
 "speed": 5.0
 }, {
-"frames": [ SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ) ],
+"frames": [ SubResource( 7 ), SubResource( 8 ), SubResource( 9 ), SubResource( 10 ) ],
 "loop": true,
 "name": "tiro",
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=12]
 extents = Vector2( 308.706, 167.111 )
 
 [sub_resource type="Animation" id=13]
@@ -111,12 +111,11 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="Shape" type="CollisionShape2D" parent="contato"]
-shape = SubResource( 2 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -7.62939e-06, 0 )
-scale = Vector2( 1, 1 )
-frames = SubResource( 7 )
+frames = SubResource( 11 )
 animation = "tirofim"
 
 [node name="Body" type="StaticBody2D" parent="Sprite"]
@@ -125,7 +124,7 @@ collision_layer = 256
 collision_mask = 256
 
 [node name="Shape" type="CollisionShape2D" parent="Sprite/Body"]
-shape = SubResource( 1 )
+shape = SubResource( 12 )
 
 [node name="Detector" type="Area2D" parent="Sprite"]
 scale = Vector2( 0.0777439, 0.0478723 )
@@ -133,7 +132,7 @@ collision_layer = 262144
 collision_mask = 262144
 
 [node name="Shape" type="CollisionShape2D" parent="Sprite/Detector"]
-shape = SubResource( 1 )
+shape = SubResource( 12 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/explosao = SubResource( 13 )
