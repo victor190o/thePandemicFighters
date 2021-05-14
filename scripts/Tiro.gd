@@ -11,7 +11,7 @@ func _ready():
 
 func _process(delta):
 	if(!contato):
-		$Sprite.play("tiro2")
+		$Sprite.play("tirobase")
 		position = Vector2(position.x + velocidade * direcao * delta, position.y)
 		tempo += delta
 		if(tempo > 0.5):

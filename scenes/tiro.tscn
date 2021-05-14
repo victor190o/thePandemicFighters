@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=2]
+[gd_scene load_steps=35 format=2]
 
 [ext_resource path="res://assets/tiro/waveform2.png" type="Texture" id=1]
 [ext_resource path="res://scripts/Tiro.gd" type="Script" id=2]
@@ -16,8 +16,13 @@
 [ext_resource path="res://assets/tirofim/hits-2-6.png" type="Texture" id=14]
 [ext_resource path="res://assets/tirofim/hits-2-7.png" type="Texture" id=15]
 [ext_resource path="res://assets/tirofim/hits-2-2.png" type="Texture" id=16]
+[ext_resource path="res://player/tirobasico/tirosaido/tirosaindo1.png" type="Texture" id=17]
+[ext_resource path="res://player/tirobasico/tirosaido/tirosaindo2.png" type="Texture" id=18]
+[ext_resource path="res://player/tirobasico/tirosaido/tirosaindo3.png" type="Texture" id=19]
+[ext_resource path="res://player/tirobasico/tirosaido/tirosaindo4.png" type="Texture" id=20]
+[ext_resource path="res://player/tirobasico/tirosaido/tirosaindo5.png" type="Texture" id=21]
 
-[sub_resource type="RectangleShape2D" id=1]
+[sub_resource type="RectangleShape2D" id=14]
 extents = Vector2( 24, 8 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -81,6 +86,11 @@ animations = [ {
 "loop": true,
 "name": "tiro",
 "speed": 5.0
+}, {
+"frames": [ ExtResource( 17 ), ExtResource( 18 ), ExtResource( 19 ), ExtResource( 20 ), ExtResource( 21 ) ],
+"loop": true,
+"name": "tirobase",
+"speed": 8.0
 } ]
 
 [sub_resource type="RectangleShape2D" id=12]
@@ -111,12 +121,13 @@ collision_layer = 6
 collision_mask = 6
 
 [node name="Shape" type="CollisionShape2D" parent="contato"]
-shape = SubResource( 1 )
+shape = SubResource( 14 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -7.62939e-06, 0 )
 frames = SubResource( 11 )
-animation = "tirofim"
+animation = "tirobase"
+frame = 1
 
 [node name="Body" type="StaticBody2D" parent="Sprite"]
 scale = Vector2( 0.0777439, 0.0478723 )
