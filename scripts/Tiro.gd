@@ -24,7 +24,8 @@ func _on_contato_body_entered(body):
 	contato = true
 	$Sprite.stop()
 	$Sprite.play("tirofim")
-	body.dano()
+	if(body.get_name() != "TileMap"):
+		body.dano();
 	get_node("anim").play("explosao")
 	pass # Replace with function body.
 	
