@@ -51,7 +51,7 @@
 [ext_resource path="res://ownAssets/Background layers/Layer_0007_Lights.png" type="Texture" id=49]
 [ext_resource path="res://ownAssets/exclamantionPointer.png" type="Texture" id=50]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="SpriteFrames" id=1]
 animations = [ {
 "frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ) ],
 "loop": true,
@@ -79,7 +79,7 @@ animations = [ {
 "speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
+[sub_resource type="RectangleShape2D" id=2]
 extents = Vector2( 20.0367, 32.7812 )
 
 [node name="World" type="Node"]
@@ -196,13 +196,13 @@ __meta__ = {
 
 [node name="Sprite" type="AnimatedSprite" parent="Player"]
 position = Vector2( -2.86102e-06, -1.06773 )
-frames = SubResource( 2 )
+frames = SubResource( 1 )
 animation = "lowered"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
 position = Vector2( -3.84399, 9.43321 )
 scale = Vector2( 1.14068, 1.48271 )
-shape = SubResource( 3 )
+shape = SubResource( 2 )
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
 offset = Vector2( 0, 40 )
@@ -228,6 +228,8 @@ z_index = -1
 
 [node name="tip" parent="tips" instance=ExtResource( 37 )]
 position = Vector2( 72.5416, 342.492 )
+width = 50
+height = 50
 
 [node name="tip_content" type="Node2D" parent="tips/tip"]
 position = Vector2( -72.5416, -342.492 )
