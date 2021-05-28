@@ -22,7 +22,7 @@
 [ext_resource path="res://player/tirobasico/tirosaido/tirosaindo4.png" type="Texture" id=20]
 [ext_resource path="res://player/tirobasico/tirosaido/tirosaindo5.png" type="Texture" id=21]
 
-[sub_resource type="RectangleShape2D" id=14]
+[sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 24, 8 )
 
 [sub_resource type="AtlasTexture" id=2]
@@ -117,11 +117,11 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="contato" type="Area2D" parent="."]
-collision_layer = 6
+collision_layer = 8198
 collision_mask = 6
 
 [node name="Shape" type="CollisionShape2D" parent="contato"]
-shape = SubResource( 14 )
+shape = SubResource( 1 )
 
 [node name="Sprite" type="AnimatedSprite" parent="."]
 position = Vector2( -7.62939e-06, 0 )
@@ -147,4 +147,5 @@ shape = SubResource( 12 )
 
 [node name="anim" type="AnimationPlayer" parent="."]
 anims/explosao = SubResource( 13 )
+
 [connection signal="body_entered" from="contato" to="." method="_on_contato_body_entered"]

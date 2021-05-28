@@ -1,218 +1,68 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=21 format=2]
 
 [ext_resource path="res://tileset/grama.tres" type="TileSet" id=1]
-[ext_resource path="res://player.gd" type="Script" id=2]
-[ext_resource path="res://player/pesterun/pesterun4.png" type="Texture" id=3]
+[ext_resource path="res://assets/Purple Portal Sprite Sheet.png" type="Texture" id=2]
+[ext_resource path="res://scripts/Portal1.gd" type="Script" id=3]
 [ext_resource path="res://scenes/Monstro.tscn" type="PackedScene" id=4]
 [ext_resource path="res://audio/Medieval Song.ogg" type="AudioStream" id=5]
-[ext_resource path="res://scripts/Atirador.gd" type="Script" id=6]
-[ext_resource path="res://player/peste/peste6.png" type="Texture" id=7]
-[ext_resource path="res://player/peste/peste2.png" type="Texture" id=8]
-[ext_resource path="res://player/peste/peste4.png" type="Texture" id=9]
-[ext_resource path="res://player/peste/peste3.png" type="Texture" id=10]
-[ext_resource path="res://player/peste/peste5.png" type="Texture" id=11]
-[ext_resource path="res://player/peste/peste1.png" type="Texture" id=12]
-[ext_resource path="res://player/pesterun/pesterun2.png" type="Texture" id=13]
-[ext_resource path="res://player/pesterun/pesterun6.png" type="Texture" id=14]
-[ext_resource path="res://player/pesterun/pesterun1.png" type="Texture" id=15]
-[ext_resource path="res://player/pesterun/pesterun5.png" type="Texture" id=16]
-[ext_resource path="res://player/pesterun/pesterun3.png" type="Texture" id=17]
-[ext_resource path="res://player/pesteatirando/pesteatirando2.png" type="Texture" id=18]
-[ext_resource path="res://player/pesteatirando/pesteatirando5.png" type="Texture" id=19]
-[ext_resource path="res://player/pesteatirando/pesteatirando1.png" type="Texture" id=20]
-[ext_resource path="res://player/pesteatirando/pesteatirando3.png" type="Texture" id=21]
-[ext_resource path="res://player/pesteatirando/pesteatirando6.png" type="Texture" id=22]
-[ext_resource path="res://player/pesteatirando/pesteatirando4.png" type="Texture" id=23]
-[ext_resource path="res://player/pestejump/pestejump7.png" type="Texture" id=24]
-[ext_resource path="res://player/pestejump/pestejump6.png" type="Texture" id=25]
-[ext_resource path="res://player/pestejump/pestejump4.png" type="Texture" id=26]
-[ext_resource path="res://player/pestejump/pestejump5.png" type="Texture" id=27]
-[ext_resource path="res://player/pestejump/pestejump3.png" type="Texture" id=28]
-[ext_resource path="res://player/pestejump/pestejump1.png" type="Texture" id=29]
-[ext_resource path="res://player/pestejump/pestejump2.png" type="Texture" id=30]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado5.png" type="Texture" id=31]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado3.png" type="Texture" id=32]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado4.png" type="Texture" id=33]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado2.png" type="Texture" id=34]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado6.png" type="Texture" id=35]
-[ext_resource path="res://player/pesteabaixado/pesteabaixado1.png" type="Texture" id=36]
+[ext_resource path="res://scenes/Player.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ParallaxBackground.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/tip.tscn" type="PackedScene" id=37]
 [ext_resource path="res://scripts/tip_content.gd" type="Script" id=38]
-[ext_resource path="res://ownAssets/Background layers/Layer_0005_5.png" type="Texture" id=39]
-[ext_resource path="res://ownAssets/Background layers/Layer_0010_1.png" type="Texture" id=40]
-[ext_resource path="res://ownAssets/Background layers/Layer_0000_9.png" type="Texture" id=41]
-[ext_resource path="res://ownAssets/Background layers/Layer_0004_Lights.png" type="Texture" id=42]
-[ext_resource path="res://ownAssets/Background layers/Layer_0002_7.png" type="Texture" id=43]
-[ext_resource path="res://ownAssets/Background layers/Layer_0001_8.png" type="Texture" id=44]
-[ext_resource path="res://ownAssets/Background layers/Layer_0008_3.png" type="Texture" id=45]
-[ext_resource path="res://ownAssets/Background layers/Layer_0006_4.png" type="Texture" id=46]
-[ext_resource path="res://ownAssets/Background layers/Layer_0009_2.png" type="Texture" id=47]
-[ext_resource path="res://ownAssets/Background layers/Layer_0003_6.png" type="Texture" id=48]
-[ext_resource path="res://ownAssets/Background layers/Layer_0007_Lights.png" type="Texture" id=49]
 [ext_resource path="res://ownAssets/exclamantionPointer.png" type="Texture" id=50]
 
-[sub_resource type="SpriteFrames" id=2]
+[sub_resource type="AtlasTexture" id=1]
+atlas = ExtResource( 2 )
+region = Rect2( 0, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=2]
+atlas = ExtResource( 2 )
+region = Rect2( 64, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=3]
+atlas = ExtResource( 2 )
+region = Rect2( 128, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=4]
+atlas = ExtResource( 2 )
+region = Rect2( 192, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=5]
+atlas = ExtResource( 2 )
+region = Rect2( 256, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=6]
+atlas = ExtResource( 2 )
+region = Rect2( 320, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=7]
+atlas = ExtResource( 2 )
+region = Rect2( 384, 0, 64, 64 )
+
+[sub_resource type="AtlasTexture" id=8]
+atlas = ExtResource( 2 )
+region = Rect2( 448, 0, 64, 64 )
+
+[sub_resource type="SpriteFrames" id=9]
 animations = [ {
-"frames": [ ExtResource( 12 ), ExtResource( 8 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 11 ), ExtResource( 7 ) ],
+"frames": [ SubResource( 1 ), SubResource( 2 ), SubResource( 3 ), SubResource( 4 ), SubResource( 5 ), SubResource( 6 ), SubResource( 7 ), SubResource( 8 ) ],
 "loop": true,
 "name": "idle",
 "speed": 5.0
-}, {
-"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 35 ) ],
-"loop": true,
-"name": "lowered",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 20 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 22 ) ],
-"loop": true,
-"name": "shoot",
-"speed": 5.0
-}, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "run",
-"speed": 8.0
-}, {
-"frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ) ],
-"loop": true,
-"name": "jump",
-"speed": 5.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=3]
-extents = Vector2( 20.0367, 32.7812 )
+[sub_resource type="CapsuleShape2D" id=10]
+radius = 3.74634
+height = 67.7717
 
 [node name="World" type="Node"]
 __meta__ = {
 "_edit_horizontal_guides_": [ -371.637 ]
 }
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+[node name="ParallaxBackground" parent="." instance=ExtResource( 7 )]
 
-[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer"]
-texture = ExtResource( 40 )
-centered = false
-
-[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_offset = Vector2( 1, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer2"]
-texture = ExtResource( 47 )
-centered = false
-
-[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.2, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer3"]
-texture = ExtResource( 45 )
-centered = false
-
-[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.3, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer4"]
-texture = ExtResource( 49 )
-centered = false
-
-[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.4, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer5"]
-texture = ExtResource( 46 )
-centered = false
-
-[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.5, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer6"]
-texture = ExtResource( 39 )
-centered = false
-
-[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.6, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer7"]
-texture = ExtResource( 42 )
-centered = false
-
-[node name="ParallaxLayer8" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.8, 1 )
-motion_offset = Vector2( 1, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer8"]
-texture = ExtResource( 48 )
-centered = false
-
-[node name="ParallaxLayer9" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 0.8, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer9"]
-texture = ExtResource( 43 )
-centered = false
-
-[node name="ParallaxLayer10" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer10"]
-texture = ExtResource( 44 )
-centered = false
-
-[node name="ParallaxLayer11" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2( 0, -152 )
-motion_scale = Vector2( 1.1, 1 )
-motion_mirroring = Vector2( 928, 0 )
-
-[node name="Sprite" type="Sprite" parent="ParallaxBackground/ParallaxLayer11"]
-texture = ExtResource( 41 )
-centered = false
-
-[node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 156.571, 433.573 )
-script = ExtResource( 2 )
-__meta__ = {
-"_edit_group_": true
-}
-
-[node name="Sprite" type="AnimatedSprite" parent="Player"]
-position = Vector2( -2.86102e-06, -1.06773 )
-frames = SubResource( 2 )
-animation = "lowered"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
-position = Vector2( -3.84399, 9.43321 )
-scale = Vector2( 1.14068, 1.48271 )
-shape = SubResource( 3 )
-
-[node name="Camera2D" type="Camera2D" parent="Player"]
-offset = Vector2( 0, 40 )
-current = true
-limit_top = 0
-limit_bottom = 0
-
-[node name="Atirador" type="Node2D" parent="Player"]
-position = Vector2( -0.101227, 0.0722656 )
-script = ExtResource( 6 )
+[node name="Player" parent="." instance=ExtResource( 6 )]
 
 [node name="backgroundMusic" type="AudioStreamPlayer" parent="."]
 stream = ExtResource( 5 )
@@ -251,5 +101,27 @@ texture = ExtResource( 50 )
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = ExtResource( 1 )
+collision_layer = 8193
+collision_mask = 8193
 format = 1
-tile_data = PoolIntArray( 42, 19, 0, 65578, 19, 0, 131114, 19, 0, 131117, 15, 0, 131118, 16, 0, 131119, 17, 0, 131122, 0, 0, 131123, 2, 0, 196632, 18, 0, 196650, 19, 0, 196658, 3, 0, 196659, 5, 0, 262168, 20, 0, 262186, 20, 0, 262187, 17, 0, 262194, 3, 0, 262195, 5, 0, 327701, 18, 0, 327730, 3, 0, 327731, 21, 0, 327732, 1, 0, 327733, 1, 0, 327734, 1, 0, 327735, 8, 0, 393223, 18, 0, 393225, 15, 0, 393226, 16, 0, 393227, 16, 0, 393228, 17, 0, 393237, 19, 0, 393243, 6, 0, 393244, 7, 0, 393245, 8, 0, 393254, 18, 0, 393262, 18, 0, 393266, 3, 0, 393267, 10, 0, 393268, 10, 0, 393269, 10, 0, 393270, 10, 0, 393271, 11, 0, 393286, 18, 0, 458759, 19, 0, 458770, 15, 0, 458771, 16, 0, 458772, 16, 0, 458773, 22, 0, 458779, 9, 0, 458780, 10, 0, 458781, 11, 0, 458786, 18, 0, 458790, 19, 0, 458798, 20, 0, 458802, 3, 0, 458803, 10, 0, 458804, 10, 0, 458805, 10, 0, 458806, 10, 0, 458807, 11, 0, 458822, 20, 0, 524288, 0, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 22, 0, 524314, 18, 0, 524315, 9, 0, 524316, 10, 0, 524317, 11, 0, 524322, 19, 0, 524326, 19, 0, 524330, 18, 0, 524338, 3, 0, 524339, 10, 0, 524340, 10, 0, 524341, 10, 0, 524342, 10, 0, 524343, 11, 0, 524348, 0, 0, 524349, 1, 0, 524350, 1, 0, 524351, 1, 0, 524352, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 2, 0, 589824, 3, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589851, 9, 0, 589852, 10, 0, 589853, 11, 0, 589858, 19, 0, 589862, 19, 0, 589866, 19, 0, 589874, 3, 0, 589875, 10, 0, 589876, 10, 0, 589877, 10, 0, 589878, 10, 0, 589879, 11, 0, 589884, 3, 0, 589885, 4, 0, 589886, 4, 0, 589887, 4, 0, 589888, 4, 0, 589889, 4, 0, 589890, 4, 0, 589891, 5, 0 )
+tile_data = PoolIntArray( 42, 19, 0, 65578, 19, 0, 131101, 15, 0, 131102, 16, 0, 131103, 17, 0, 131107, 18, 0, 131114, 19, 0, 131117, 15, 0, 131118, 16, 0, 131119, 17, 0, 131122, 0, 0, 131123, 2, 0, 196632, 18, 0, 196643, 20, 0, 196650, 19, 0, 196658, 3, 0, 196659, 5, 0, 262168, 20, 0, 262186, 20, 0, 262187, 17, 0, 262194, 3, 0, 262195, 5, 0, 327701, 18, 0, 327730, 3, 0, 327731, 11, 0, 327735, 18, 0, 393223, 18, 0, 393225, 15, 0, 393226, 16, 0, 393227, 16, 0, 393228, 17, 0, 393237, 19, 0, 393243, 6, 0, 393244, 7, 0, 393245, 8, 0, 393254, 18, 0, 393262, 18, 0, 393266, 3, 0, 393267, 11, 0, 393271, 19, 0, 393286, 18, 0, 458759, 19, 0, 458770, 15, 0, 458771, 16, 0, 458772, 16, 0, 458773, 22, 0, 458779, 9, 0, 458780, 10, 0, 458781, 11, 0, 458786, 18, 0, 458790, 19, 0, 458798, 20, 0, 458802, 9, 0, 458803, 11, 0, 458807, 19, 0, 458822, 20, 0, 524288, 0, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 22, 0, 524314, 18, 0, 524315, 9, 0, 524316, 10, 0, 524317, 11, 0, 524322, 19, 0, 524326, 19, 0, 524330, 18, 0, 524338, 9, 0, 524339, 11, 0, 524343, 20, 0, 524348, 0, 0, 524349, 1, 0, 524350, 1, 0, 524351, 1, 0, 524352, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 2, 0, 589824, 3, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589851, 9, 0, 589852, 10, 0, 589853, 11, 0, 589858, 19, 0, 589862, 19, 0, 589866, 19, 0, 589874, 3, 0, 589875, 11, 0, 589884, 3, 0, 589885, 4, 0, 589886, 4, 0, 589887, 4, 0, 589888, 4, 0, 589889, 4, 0, 589890, 4, 0, 589891, 5, 0 )
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2( 2839.24, 59.6931 )
+z_index = -1
+script = ExtResource( 3 )
+
+[node name="AnimatedSprite" type="AnimatedSprite" parent="Area2D"]
+position = Vector2( 1301.5, 385 )
+scale = Vector2( 2.4375, 2.4375 )
+frames = SubResource( 9 )
+animation = "idle"
+frame = 3
+playing = true
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2( 1302.75, 396.386 )
+shape = SubResource( 10 )
+
+[connection signal="body_entered" from="Area2D" to="Area2D" method="_on_Area2D_body_entered"]
