@@ -4,7 +4,7 @@ var flip = true
 const GRAVITY = 30
 var posicao_inicial
 var posicao_final
-var velocidade = 1
+var velocidade = 0.05
 var posicao_atual
 var morto = false
 
@@ -13,7 +13,7 @@ var motion = Vector2()
 func _ready():
 	$Sprite.play("walk")
 	posicao_inicial = $".".position.x
-	posicao_final = posicao_inicial + 100
+	posicao_final = posicao_inicial + 60
 
 func _physics_process(delta):
 	motion.y += GRAVITY
