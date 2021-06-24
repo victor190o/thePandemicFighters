@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=2]
+[gd_scene load_steps=54 format=2]
 
 [ext_resource path="res://tileset/grama.tres" type="TileSet" id=1]
 [ext_resource path="res://player.gd" type="Script" id=2]
@@ -50,6 +50,7 @@
 [ext_resource path="res://ownAssets/Background layers/Layer_0003_6.png" type="Texture" id=48]
 [ext_resource path="res://ownAssets/Background layers/Layer_0007_Lights.png" type="Texture" id=49]
 [ext_resource path="res://ownAssets/exclamantionPointer.png" type="Texture" id=50]
+[ext_resource path="res://scenes/barreira.tscn" type="PackedScene" id=51]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
@@ -58,24 +59,24 @@ animations = [ {
 "name": "idle",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 35 ) ],
+"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 14 ) ],
 "loop": true,
-"name": "lowered",
-"speed": 5.0
+"name": "run",
+"speed": 8.0
 }, {
 "frames": [ ExtResource( 20 ), ExtResource( 18 ), ExtResource( 21 ), ExtResource( 23 ), ExtResource( 19 ), ExtResource( 22 ) ],
 "loop": true,
 "name": "shoot",
 "speed": 5.0
 }, {
-"frames": [ ExtResource( 15 ), ExtResource( 13 ), ExtResource( 17 ), ExtResource( 3 ), ExtResource( 16 ), ExtResource( 14 ) ],
-"loop": true,
-"name": "run",
-"speed": 8.0
-}, {
 "frames": [ ExtResource( 29 ), ExtResource( 30 ), ExtResource( 28 ), ExtResource( 26 ), ExtResource( 27 ), ExtResource( 25 ), ExtResource( 24 ) ],
 "loop": true,
 "name": "jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 36 ), ExtResource( 34 ), ExtResource( 32 ), ExtResource( 33 ), ExtResource( 31 ), ExtResource( 35 ) ],
+"loop": true,
+"name": "lowered",
 "speed": 5.0
 } ]
 
@@ -188,7 +189,7 @@ texture = ExtResource( 41 )
 centered = false
 
 [node name="Player" type="KinematicBody2D" parent="."]
-position = Vector2( 156.571, 433.573 )
+position = Vector2( 153.743, 352.963 )
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_group_": true
@@ -220,7 +221,10 @@ volume_db = -80.0
 autoplay = true
 
 [node name="Monstro" parent="." instance=ExtResource( 4 )]
-position = Vector2( 653.211, 352.163 )
+position = Vector2( 690.629, 352.163 )
+
+[node name="Monstro" parent="Monstro" instance=ExtResource( 4 )]
+position = Vector2( 552.985, 64.2571 )
 
 [node name="tips" type="Node2D" parent="."]
 position = Vector2( 184, 8 )
@@ -228,8 +232,6 @@ z_index = -1
 
 [node name="tip" parent="tips" instance=ExtResource( 37 )]
 position = Vector2( 72.5416, 342.492 )
-width = 50
-height = 50
 
 [node name="tip_content" type="Node2D" parent="tips/tip"]
 position = Vector2( -72.5416, -342.492 )
@@ -255,3 +257,6 @@ texture = ExtResource( 50 )
 tile_set = ExtResource( 1 )
 format = 1
 tile_data = PoolIntArray( 42, 19, 0, 65578, 19, 0, 131114, 19, 0, 131117, 15, 0, 131118, 16, 0, 131119, 17, 0, 131122, 0, 0, 131123, 2, 0, 196632, 18, 0, 196650, 19, 0, 196658, 3, 0, 196659, 5, 0, 262168, 20, 0, 262186, 20, 0, 262187, 17, 0, 262194, 3, 0, 262195, 5, 0, 327701, 18, 0, 327730, 3, 0, 327731, 21, 0, 327732, 1, 0, 327733, 1, 0, 327734, 1, 0, 327735, 8, 0, 393223, 18, 0, 393225, 15, 0, 393226, 16, 0, 393227, 16, 0, 393228, 17, 0, 393237, 19, 0, 393243, 6, 0, 393244, 7, 0, 393245, 8, 0, 393254, 18, 0, 393262, 18, 0, 393266, 3, 0, 393267, 10, 0, 393268, 10, 0, 393269, 10, 0, 393270, 10, 0, 393271, 11, 0, 393286, 18, 0, 458759, 19, 0, 458770, 15, 0, 458771, 16, 0, 458772, 16, 0, 458773, 22, 0, 458779, 9, 0, 458780, 10, 0, 458781, 11, 0, 458786, 18, 0, 458790, 19, 0, 458798, 20, 0, 458802, 3, 0, 458803, 10, 0, 458804, 10, 0, 458805, 10, 0, 458806, 10, 0, 458807, 11, 0, 458822, 20, 0, 524288, 0, 0, 524289, 1, 0, 524290, 1, 0, 524291, 1, 0, 524292, 1, 0, 524293, 1, 0, 524294, 1, 0, 524295, 22, 0, 524314, 18, 0, 524315, 9, 0, 524316, 10, 0, 524317, 11, 0, 524322, 19, 0, 524326, 19, 0, 524330, 18, 0, 524338, 3, 0, 524339, 10, 0, 524340, 10, 0, 524341, 10, 0, 524342, 10, 0, 524343, 11, 0, 524348, 0, 0, 524349, 1, 0, 524350, 1, 0, 524351, 1, 0, 524352, 1, 0, 524353, 1, 0, 524354, 1, 0, 524355, 2, 0, 589824, 3, 0, 589825, 4, 0, 589826, 4, 0, 589827, 4, 0, 589828, 4, 0, 589829, 4, 0, 589830, 4, 0, 589851, 9, 0, 589852, 10, 0, 589853, 11, 0, 589858, 19, 0, 589862, 19, 0, 589866, 19, 0, 589874, 3, 0, 589875, 10, 0, 589876, 10, 0, 589877, 10, 0, 589878, 10, 0, 589879, 11, 0, 589884, 3, 0, 589885, 4, 0, 589886, 4, 0, 589887, 4, 0, 589888, 4, 0, 589889, 4, 0, 589890, 4, 0, 589891, 5, 0 )
+
+[node name="morteQueda" parent="." instance=ExtResource( 51 )]
+position = Vector2( 2721.1, 247.471 )

@@ -65,4 +65,5 @@ text = "Criado por Pablo Oliveira, Matheus Ferreira, Victor Eduardo e Santiago F
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="pressed" from="startButton" to="startButton" method="_on_Button_pressed"]
